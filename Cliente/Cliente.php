@@ -62,6 +62,7 @@ class Cliente
 
   public function __toString()
   {
+    $mensajeDadoDeBaja = $this->getBaja() ?  "El cliente está dado de baja" : "El cliente no está dado de baja";
     return "Nombre y Apellido: "
       . $this->getNombre()
       . " "
@@ -71,7 +72,7 @@ class Cliente
       . $this->getTipoDoc()
       . " "
       . $this->getNroDoc()
-      . ".\n"
-      . $this->getBaja() ? "El cliente está dado de baja" : "El cliente no está dado de baja";
+      . "\n"
+      . $mensajeDadoDeBaja;
   }
 }
