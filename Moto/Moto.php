@@ -9,14 +9,14 @@ class Moto
   private $porcIncAnual;
   private $activa;
 
-  public function __construct($codigo, $costo, $anioFabricacion, $descripcion, $porcIncAnual)
+  public function __construct($codigo, $costo, $anioFabricacion, $descripcion, $porcIncAnual, $activa)
   {
     $this->codigo = $codigo;
     $this->costo = $costo;
     $this->anioFabricacion = $anioFabricacion;
     $this->descripcion = $descripcion;
     $this->porcIncAnual = $porcIncAnual;
-    $this->activa = true;
+    $this->activa = $activa;
   }
   //getters
   public function getCodigo()
