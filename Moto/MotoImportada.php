@@ -30,4 +30,19 @@ class MotoImportada extends Moto
   {
     $this->pais_imp = $value;
   }
+  public function darPrecioVenta()
+  {
+    $venta = parent::darPrecioVenta();
+    if ($venta > 0) {
+      $venta = $venta + $this->getImpuestoImp();
+    }
+    return $venta;
+  }
+  public function __toString()
+  {
+
+    $cadena = parent::__toString();
+    $cadena .= "\n" . "Importada desde: " . $this->getPaisImp();
+    $cadena .= "\n" . "Impuesto de importación: " . $this->getImpuestoImp();
+  }
 }
